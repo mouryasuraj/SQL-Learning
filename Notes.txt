@@ -1,0 +1,22 @@
+MySQL is a very popular open source Relational Database Management System.
+
+What is MYSQl:
+        1.MySQL is a Relational Database Management System(RDMS)
+        2.MySQL is a open source
+        3.MySQL is Free
+        4.MySQL is compliant with the ANSI-SQL standard
+        5.MySQL is very fast, reliable, scalable, and easy to use.
+        6.MySQL is cross platform.
+        7.MySQL is ideal for both small and large applications.
+        8.MySQL was first released in 1995.
+        9.MySQL is developed, distributed and supported by oracle corporation
+        10.MySQL is named after co-founder Monty Widenius's daughter: My
+
+Who uses MySQL:
+        1.Huge websites like facebook, airbnb, twitter, github, Uber, Youtube,etc
+        2.A very large number of wev developer around the world.
+
+To show data on your website you will need:
+        1.An RDMS program like MYSQL
+        2.A server side scripting language like PHP
+        3.To use SQL to get the data you want
