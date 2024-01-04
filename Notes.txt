@@ -1,5 +1,31 @@
 MySQL is a very popular open source Relational Database Management System.
 
+What is RDBMS(Relational Database Management System):
+        1.It's a type of database management system that stores data in a structured format, using rows and colums in tables to represent and organize information.
+        2.The relational model is based on mathematical set theory and is widely used to managing structured data.
+        3.Key features of RDBMS:
+            a.Tables:
+                i.Data is organized into tables, where each table consist rows and columns.
+                ii.Each row represent a record and each column represent a specific attribute or field
+            b.Relationships:
+                i.RDBMS allows the establishment of Relationships between tables.
+                ii.This is done through keys, where one table can reference another using primary and foreign keys.
+                iii.This ensures data integrity and consistency.
+            c.Constraints:
+                i.RDBMS support to used constraints to define rule for the data of tables.
+                ii.Some of the common constraints like "Primary", "foreign", "check", "unique".
+            d.ACID properties:
+                i.RDBMS adheres to ACID properties.
+                ii.ACID stands for Automicity, Consistency, Isolation, Durability
+                iii.Explore ACID:
+                        a.Automicity:Ensures that a transaction is treated as a single, indivisible unit of worlk,
+                        b.Consistency: Gurantees that database is in a consistent state before or after the transaction.
+                        c.Isolation: Ensures that transaction is executed in isolation from each other.
+                        d.Durablility:Gurantees that once a transaction is committed, its affects permanent
+           e.SQL(Structured Query Language):
+                1.RDBMS uses SQL for defininig and manipulating data.
+                ii.SQL provide standardized way to interact with database, allowing users to perform updating, querying and managing the database schema.  
+
 What is MYSQl:
         1.MySQL is a Relational Database Management System(RDMS)
         2.MySQL is a open source
@@ -20,3 +46,81 @@ To show data on your website you will need:
         1.An RDMS program like MYSQL
         2.A server side scripting language like PHP
         3.To use SQL to get the data you want
+
+
+
+----------------Select statement------------------
+
+
+1.select:
+        1.select statement is used to extract data from a database.
+        2.syntax:
+                --> select column1, column2,...
+                    from table_name;
+        3.Suppose our table name is Customer and we have to extract the data of customerID column then query will:
+                --> select customerID from Customer;
+        4.If we want to select all column from the table then use this syntax:
+                --> select * from Customer;
+        5.Example: SELECT CustomerName, City, Country FROM Customers;
+2.select distinct:
+        1.select distinct is used to return only distinct(different) values.
+        2.Inside a table, a column containes duplicate values and sometimes you only want to list the different (distinct) values
+        3.syntax:
+                --> select distinct column1 column2
+                    from table_name;
+        4.Example: --> select distinct Country from Customer; (Name of the country can be same).
+3.count: 
+        1.It counts and return the number of values.
+        2.Example: --> select count(distinct Country) from Customer;   (It counts and return the number of different values)
+                        output: 21
+
+
+----------------Where clause------------------
+4.where:
+        1.Where clause is used to filer data.
+        2.It is used to extract only those data that fulfill a specified condition.
+        3.The where clause is not only used in select statement, it is also used in update, delete, etc.
+        4.syntax:
+                select column1, column2
+                from table_name
+                where condition;
+        5.Example: select * from Customer where Country = 'Mexico'; (it will show all the data of colum that fulfill a condition, means those have city "mexico")
+        6.SQL require single quote around text values and numeric should not be enclosed in quotes:
+        7.Example: select * from Customer where customerID = 1;
+5.operators in the where clause:
+        --> =, >, <, >=, <=, <>(not equal to. In some versions of sql it wil be written as !=), BETWEEN(between a certain range),
+        LIKE(search for pattern), IN(To specify multiple possible values for a column).
+
+        
+
+
+
+
+
+
+
+
+Question for interview:
+        1.What is SQL?
+        2.How to use SQL?
+
+
+Some of the most important SQL command:
+        1.select: Extract data from a database.
+        2.update: updates data in a database.
+        3.delete: deletes data from a database.
+        4.insert into: inserts new data into a database.
+        5.create database: creates a new database.
+        6.alter databse: modifies a database.
+        7.create table: creates a new table.
+        8.alter table: modifies a database.
+        9.drop table: deletes a database.
+        10.create index: creates an index(search key)
+        11.drop index: deletes a index
+
+
+Note:
+        1.SQL is not case-sensitive, select is the same as SELECT.
+        2.Semicolon after statemnt, it separate each sql statement in database system that allows us to execute more than one sql statement in the same call to the server.
+
+
