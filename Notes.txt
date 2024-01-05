@@ -12,19 +12,19 @@ What is RDBMS(Relational Database Management System):
                 ii.This is done through keys, where one table can reference another using primary and foreign keys.
                 iii.This ensures data integrity and consistency.
             c.Constraints:
-                i.RDBMS support to used constraints to define rule for the data of tables.
+                i.RDBMS supports to used constraints to define rule for the data of tables.
                 ii.Some of the common constraints like "Primary", "foreign", "check", "unique".
             d.ACID properties:
                 i.RDBMS adheres to ACID properties.
                 ii.ACID stands for Automicity, Consistency, Isolation, Durability
                 iii.Explore ACID:
-                        a.Automicity:Ensures that a transaction is treated as a single, indivisible unit of worlk,
+                        a.Automicity:Ensures that a transaction is treated as a single, indivisible unit of work,
                         b.Consistency: Gurantees that database is in a consistent state before or after the transaction.
                         c.Isolation: Ensures that transaction is executed in isolation from each other.
                         d.Durablility:Gurantees that once a transaction is committed, its affects permanent
            e.SQL(Structured Query Language):
                 1.RDBMS uses SQL for defininig and manipulating data.
-                ii.SQL provide standardized way to interact with database, allowing users to perform updating, querying and managing the database schema.  
+                ii.SQL provide standardized way to interact with database, allowing users to perform updating, querying and managing the database schema. 
 
 What is MYSQl:
         1.MySQL is a Relational Database Management System(RDMS)
@@ -40,11 +40,11 @@ What is MYSQl:
 
 Who uses MySQL:
         1.Huge websites like facebook, airbnb, twitter, github, Uber, Youtube,etc
-        2.A very large number of wev developer around the world.
+        2.A very large number of web developers around the world.
 
 To show data on your website you will need:
         1.An RDMS program like MYSQL
-        2.A server side scripting language like PHP
+        2.A server side scripting language like PHP, node.js
         3.To use SQL to get the data you want
 
 
@@ -57,7 +57,7 @@ To show data on your website you will need:
         2.syntax:
                 --> select column1, column2,...
                     from table_name;
-        3.Suppose our table name is Customer and we have to extract the data of customerID column then query will:
+        3.Suppose our table name is Customer and we have to extract the data of customerID column then query will be:
                 --> select customerID from Customer;
         4.If we want to select all column from the table then use this syntax:
                 --> select * from Customer;
@@ -76,7 +76,7 @@ To show data on your website you will need:
 
 
 ----------------Where clause------------------
-4.where:
+1.where:
         1.Where clause is used to filer data.
         2.It is used to extract only those data that fulfill a specified condition.
         3.The where clause is not only used in select statement, it is also used in update, delete, etc.
@@ -87,12 +87,62 @@ To show data on your website you will need:
         5.Example: select * from Customer where Country = 'Mexico'; (it will show all the data of colum that fulfill a condition, means those have city "mexico")
         6.SQL require single quote around text values and numeric should not be enclosed in quotes:
         7.Example: select * from Customer where customerID = 1;
-5.operators in the where clause:
+2.operators in the where clause:
         --> =, >, <, >=, <=, <>(not equal to. In some versions of sql it wil be written as !=), BETWEEN(between a certain range),
         LIKE(search for pattern), IN(To specify multiple possible values for a column).
 
         
+----------------AND, OR, and NOT operators------------------
+1.The where clause can be combined with AND, OR, and NOT operators.
+2.The And and OR is used to filter records beased on more than one condition.
+        a.The AND operator displays a record if all the conditions separated by AND are true.
+        b.The OR operator displays a record if any of the conditions separated by OR are true.
+3.The NOT operator displays a record if the condition is not true.
+4.Syntax:
+        AND sysntax: 
+                --> select column1, column2 from table_name where condition1 AND condition2 AND condition3...;
+        OR syntax:
+                --> select column1, column2 from table_name where condition1 OR condition2 OR condition3...;
+        NOT syntax:
+                --> select column1, column2 from table_name where NOT condition;
+5.Example:
+        AND: 
+                --> select * from Customer where Country = "Germany" AND city = "Berlin";
+        OR:
+                --> select * from Customer where city = "Berlin" AND city = "Mannheim";
+        NOT:
+                --> select * from Customer where NOT Country = "Germanmy";
+        Combining(AND,OR, and NOT):
+                --> select * from Customer where Country = "Germanmy" AND (City = "Berlin" OR City = "");
+                --> select * from Customer where NOT Country = "Germanmy" AND NOT Country = "USA";
 
+
+----------------Order By------------------
+1.The order keyword is used to sort the result-set in ascending or descending order.
+2.The order keyword sort the result in ascending order by default. If you want to sort in descending order, use the DESC keyword.
+3.syntax:
+        --> select column1, column2 from table_name ORDER BY colum1, column2,... ASC | DESC
+4.Example:
+        --> select * from Customer ORDER BY Country;
+        --> select * from Customer ORDER BY Country DESC;
+        --> select * from Customer ORDER BY Country, CustomerName; (The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" and the "CustomerName" column. This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:
+        --> select * from Customer ORDER BY Country ASC, CustomerName DESC; 
+Example)
+
+
+
+----------------Insert Into------------------
+1.This statement is used to insert new records in a table.
+2.Two ways to insert:
+        1.Specify both column names and values:
+        Syntax:
+                 --> INSERT INTO table_name(colum1, column2, column3,...) values (value1, value2,....);
+        2.If you are adding values for all the columns, you do not need to specify the column names in the SQL query. However make sure the order of the values is in the same order as the columns in the table.
+        Syntax:
+                ---> INSERT INTO table_name values(value1, value2,...);
+
+        Example: INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+                 VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');   (In this Example, customerId is autogenrated due to auto increment field)
 
 
 
@@ -103,6 +153,8 @@ To show data on your website you will need:
 Question for interview:
         1.What is SQL?
         2.How to use SQL?
+        3.What is select statemet?
+        4.What is where clause?
 
 
 Some of the most important SQL command:
@@ -122,5 +174,7 @@ Some of the most important SQL command:
 Note:
         1.SQL is not case-sensitive, select is the same as SELECT.
         2.Semicolon after statemnt, it separate each sql statement in database system that allows us to execute more than one sql statement in the same call to the server.
+
+
 
 
