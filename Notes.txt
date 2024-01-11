@@ -145,6 +145,107 @@ Example)
                  VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');   (In this Example, customerId is autogenrated due to auto increment field)
 
 
+----------------Null values------------------
+1.A field with null value is a field with no value.
+2.A null value is different from zero or field that contains spaces. A field with null values is one that had been left blank during record creation
+3. We will have to use "IS NULL" and "IS NOT NULL" operator to test the values of null
+4.IS NULL:
+        a.IS NULL operator is used to test for empty values
+        b.syntax:
+                --> select column1, column2 from table_name where column IS NULL
+5.IS NOT NULL:
+        a.IS NOT NULL operator is used to test for non-empty values.    
+        b.syntax:
+                --> select column1, column2 from table_name where column IS NOT NULL
+6.Example:
+        --> select * from data where age IS NOT NULL and email IS NOT NULL;
+
+
+----------------Update statement------------------
+
+1.This statement is used to update the existing record in the table.
+2.syntax:
+        --> UPDATE table_name SET column1 = val, column2 = val where condition;
+        --> UPDATE data SET Age = 12, email = "xyz@gmail.com" where ID = 1;   //We can update multiple columns at the same time.
+3.Notice: The where clause in update statement. It specific which record should be updated. If you omit the where clause then it will update all records in the table.
+4.Warning: 
+        --> update table_name SET column = value;
+        --> In the above query, where clause is missing, it means that all the record will update of selected columm.
+
+
+----------------delete statement------------------
+1.This statement is used to delete the existing record in the table.
+2.sysntax: 
+        --> DELETE FROM table_name where condition.
+        --> DELETE from data where name = "Suraj";
+3.Notice: The where clause in delete statement. It specific which record should be delete. If you omit the where clause then it will delete all the records in the table.
+4.If you want to delete all rows then don't specify where clause:
+        --> DELETE from data;
+
+
+----------------LIMIT clause------------------
+1.Limit clause is used to return the specific number of records.
+2.This clause is usefull on large tables with thousands of records. Returning a large number of records can impact performance.
+3.syntax: 
+        --> select * from data Limit 4;
+4.If we want to return in between like from id number 4 to 10(inclusive) then use OFFSET
+        --> select * from data Limit 7 OFFSET 3;
+        --> also select * from data limit 7 OFFSET 3 where country = "germany";
+        --> select * from data where age = 29 limit 2;
+        
+----------------MIN() and MAX() function------------------
+1.MIN:
+        a.syntax: 
+                --> select MIN(column1) from table_name where condition;
+        b.MIN function is used to return the smallest value of the selected column.
+        c. --> select MIN(price) as SmallestPrice from data(table_name)
+2.MAX:
+        a.syntax: 
+                --> select MAX(column1) from table_name where condition;
+        b.MAX function is used to return the highest value of the selected column.
+        c. --> select MAX(price) as highestPrice from data(table_name)
+
+3.AS:   AS keyword is used to rename the column and table name.
+
+
+
+----------------COUNT, AVG, SUM functions------------------
+1.Count:
+        a.This function returns the number of rows that matches a specified condition.
+        b.Note: NUll values are not counted.
+        b.syntax:       --> select COUNT(*) from data where age = 25;
+2.AVG:
+        a.It returns the average value of a numeric column
+        b.Note: NUll values are not ignored.
+        c.syntax:       --> select AVG(column1) from data where condition;
+3.SUM:
+        a.It returns the sum of a numeric column
+        b.Note: NUll values are not ignored.
+        c.syntax:       --> select SUM(column) from data where condition;
+
+
+----------------Like operator------------------
+1.Like operator is used in a where clause to search for a specific pattern in column.
+2.There are two wildcards often used in conjunction with like operator:
+        1.The percent sign(%) represent zero, one, or multiple character.
+        2.The underscore represents one, single character.
+3.These wildcards also used in combinations.
+4.We can also combine any number using AND or OR operator.
+5.syntax:
+        --> select column1 ,column2 from data where condition LIKE pattern;
+6.     
+         LIKE Operator	                             Description
+WHERE CustomerName LIKE 'a%'	        Finds any values that start with "a"
+WHERE CustomerName LIKE '%a'	        Finds any values that end with "a"
+WHERE CustomerName LIKE '%or%'	        Finds any values that have "or" in any position
+WHERE CustomerName LIKE '_r%'	        Finds any values that have "r" in the second position
+WHERE CustomerName LIKE 'a_%'	        Finds any values that start with "a" and are at least 2 characters in length
+WHERE CustomerName LIKE 'a__%'	        Finds any values that start with "a" and are at least 3 characters in length
+WHERE ContactName LIKE 'a%o'	        Finds any values that start with "a" and ends with "o"
+7. where ContactName NOT LIKE 'a%'
+        
+
+
 
 
 
