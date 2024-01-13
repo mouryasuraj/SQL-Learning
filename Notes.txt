@@ -242,11 +242,47 @@ WHERE CustomerName LIKE '_r%'	        Finds any values that have "r" in the seco
 WHERE CustomerName LIKE 'a_%'	        Finds any values that start with "a" and are at least 2 characters in length
 WHERE CustomerName LIKE 'a__%'	        Finds any values that start with "a" and are at least 3 characters in length
 WHERE ContactName LIKE 'a%o'	        Finds any values that start with "a" and ends with "o"
-7. where ContactName NOT LIKE 'a%'
+7. where ContactName NOT LIKE 'a%''
+
+
+----------------wildcards------------------
+1.It is used to substitute one or more character in a string
+2.The wildcard characters are used with LIKE operator and LIKE operator is used with where clause to search for a specific pattern in a column.
+        --> select * from customer where city like 'der%'
+        --> select * from customer where city like '%der'
+        --> select * from customer where city like 'th_n_s'
         
 
+----------------IN------------------
+1.In operator is used to specify multiple values in a where clause.
+2.In operator is shorthand for multiple "or" condition.
+3.syntax:
+        --> select * from table_name where age IN (45,12,48,89)
+        --> select * from table_name where country IN ("India", "Germany")
+        --> select * from table_name where age NOT IN (45,12,48,89)
 
 
+----------------between operator------------------
+1.Between operator is used to specify the value which is given in the range.
+2.In between operator, begin is inclusive and end is also included.
+3.syntax:
+        --> select * from table_name where price between 10 and 20
+        --> select * from table_name where price NOT Between 10 and 20
+4.Between with in operator:
+        --> select * from table_name where price between 10 and 20 AND ID NOT IN (1,2,3)
+
+
+----------------Aliases------------------
+1.Aliases is used to give a table name, or a column name in a table, a temporary name.
+2.Aliases are ofter used to give column name and make more readable.
+3.Aliases are only accessible for the duration of that query.
+4.An alias is created with the 'AS' keyword
+5.syntax:
+        for column: --> select column as alias_name from table_name
+        for table: --> select column  from table_name as alias_name
+6.Concat_WS function is used to concate the multiple columns. We can use any punctuation to separate the record:
+        --> select coustomerName, concate_ws(',', Address, City, PostalCode, Country) AS "COntact Person" from Customer;
+        --> concate_ws stand for "Concate With Separator"
 
 
 
