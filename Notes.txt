@@ -284,6 +284,26 @@ WHERE ContactName LIKE 'a%o'	        Finds any values that start with "a" and en
         --> select coustomerName, concate_ws(',', Address, City, PostalCode, Country) AS "COntact Person" from Customer;
         --> concate_ws stand for "Concate With Separator"
 
+----------------Joins------------------
+1.Join clause is used to combine two or more tables, based on a related column between them
+
+
+
+
+------------Create table----------
+1.syntax:
+        CREATE TABLE table_name(
+                colum1 dataType,
+                colum2 dataType,
+                ...
+        )
+2.We use underscore or use camel case format to write the table name.
+
+--------------Data Types----------
+1.Three types of 
+
+
+
 
 
 
