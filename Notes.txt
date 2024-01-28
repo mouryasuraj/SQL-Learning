@@ -1,3 +1,13 @@
+SQL
+--> 1.SQL is a structured query language.
+    2.It is a language used by softwares like MySQL, PostgreSQL, oracle, MS access etc. These are RDMS
+    3.Suppose, we have a query using SQL language then it will pass through RDBMS like MySQL and then MySQL connect to database and give the information whatever asked using query.
+    4.MySQL, oracle, MS access these are softwares or RDBMS which uses SQL language to use query.
+
+CRUD
+
+
+
 MySQL is a very popular open source Relational Database Management System.
 
 What is RDBMS(Relational Database Management System):
@@ -288,6 +298,29 @@ WHERE ContactName LIKE 'a%o'	        Finds any values that start with "a" and en
 1.Join clause is used to combine two or more tables, based on a related column between them
 
 
+
+
+//SQL by Love Babar
+1.First we have to create databasae:
+        ---> CREATE DATABASE database_name;
+2.And then we have to tell the MySQL that we are using that database;
+        ---> USE database_name;
+
+
+
+//Data Types
+1.CHAR -1. string(0 - 255)
+        2. It takes the fized length, eg. if we want to add "RAM" in the data type CHAR then it will take full 0 - 254 bytes in the memory where the first three bytes it will take the "RAM" and rest of the bytes are empty but allocated to memory.
+        3. If you want to give the size of length fixed then use CHAR data type.
+2.VARCHAR-1. string(0 - 255)
+          2. It takes only as much bytes it requires, eg. "RAM" it will take only 3 bytes
+3.SIGNED and UNSIGNED:
+        CREATE TABLE student (
+                id INT PRIMARY KEY,
+                roll_no TINYTEXT(-127 to 128) UNSIGNED (it means that (0-255))
+        )
+4.Advanced DATA Types:
+        JSON(Javascript Object Notation)
 
 
 ------------Create table----------
