@@ -1,7 +1,7 @@
 SQL
 --> 1.SQL is a structured query language.
     2.It is a language used by softwares like MySQL, PostgreSQL, oracle, MS access etc. These are RDMS
-    3.Suppose, we have a query using SQL language then it will pass through RDBMS like MySQL and then MySQL connect to database and give the information whatever asked using query.
+    3.Suppose, we have a query using SQL language then it will pass through RDBMS like MySQL and then MySQL connect to database and give the informatiON whatever asked using query.
     4.MySQL, oracle, MS access these are softwares or RDBMS which uses SQL language to use query.
 
 CRUD
@@ -12,26 +12,26 @@ MySQL is a very popular open source Relational Database Management System.
 
 What is RDBMS(Relational Database Management System):
         1.It's a type of database management system that stores data in a structured format, using rows and colums in tables to represent and organize information.
-        2.The relational model is based on mathematical set theory and is widely used to managing structured data.
+        2.The relational model is based ON mathematical set theory and is widely used to managing structured data.
         3.Key features of RDBMS:
             a.Tables:
-                i.Data is organized into tables, where each table consist rows and columns.
+                i.Data is organized into tables, WHERE each table consist rows and columns.
                 ii.Each row represent a record and each column represent a specific attribute or field
             b.Relationships:
                 i.RDBMS allows the establishment of Relationships between tables.
-                ii.This is done through keys, where one table can reference another using primary and foreign keys.
+                ii.This is done through keys, WHERE one table can reference another using primary and foreign keys.
                 iii.This ensures data integrity and consistency.
             c.Constraints:
                 i.RDBMS supports to used constraints to define rule for the data of tables.
-                ii.Some of the common constraints like "Primary", "foreign", "check", "unique".
+                ii.Some of the commON constraints like "Primary", "foreign", "check", "unique".
             d.ACID properties:
                 i.RDBMS adheres to ACID properties.
                 ii.ACID stands for Automicity, Consistency, Isolation, Durability
                 iii.Explore ACID:
-                        a.Automicity:Ensures that a transaction is treated as a single, indivisible unit of work,
+                        a.Automicity:Ensures that a transactiON is treated as a single, indivisible unit of work,
                         b.Consistency: Gurantees that database is in a consistent state before or after the transaction.
-                        c.Isolation: Ensures that transaction is executed in isolation from each other.
-                        d.Durablility:Gurantees that once a transaction is committed, its affects permanent
+                        c.Isolation: Ensures that transactiON is executed in isolatiON FROM each other.
+                        d.Durablility:Gurantees that once a transactiON is committed, its affects permanent
            e.SQL(Structured Query Language):
                 1.RDBMS uses SQL for defininig and manipulating data.
                 ii.SQL provide standardized way to interact with database, allowing users to perform updating, querying and managing the database schema. 
@@ -52,91 +52,91 @@ Who uses MySQL:
         1.Huge websites like facebook, airbnb, twitter, github, Uber, Youtube,etc
         2.A very large number of web developers around the world.
 
-To show data on your website you will need:
+To show data ON your website you will need:
         1.An RDMS program like MYSQL
         2.A server side scripting language like PHP, node.js
         3.To use SQL to get the data you want
 
 
 
-----------------Select statement------------------
+----------------SELECT statement------------------
 
 
-1.select:
-        1.select statement is used to extract data from a database.
+1.SELECT:
+        1.SELECT statement is used to extract data FROM a database.
         2.syntax:
-                --> select column1, column2,...
-                    from table_name;
+                --> SELECT column1, column2,...
+                    FROM table_name;
         3.Suppose our table name is Customer and we have to extract the data of customerID column then query will be:
-                --> select customerID from Customer;
-        4.If we want to select all column from the table then use this syntax:
-                --> select * from Customer;
+                --> SELECT customerID FROM Customer;
+        4.If we want to SELECT all column FROM the table then use this syntax:
+                --> SELECT * FROM Customer;
         5.Example: SELECT CustomerName, City, Country FROM Customers;
-2.select distinct:
-        1.select distinct is used to return only distinct(different) values.
+2.SELECT distinct:
+        1.SELECT distinct is used to return only distinct(different) values.
         2.Inside a table, a column containes duplicate values and sometimes you only want to list the different (distinct) values
         3.syntax:
-                --> select distinct column1 column2
-                    from table_name;
-        4.Example: --> select distinct Country from Customer; (Name of the country can be same).
+                --> SELECT distinct column1 column2
+                    FROM table_name;
+        4.Example: --> SELECT distinct Country FROM Customer; (Name of the country can be same).
 3.count: 
         1.It counts and return the number of values.
-        2.Example: --> select count(distinct Country) from Customer;   (It counts and return the number of different values)
+        2.Example: --> SELECT count(distinct Country) FROM Customer;   (It counts and return the number of different values)
                         output: 21
 
 
-----------------Where clause------------------
-1.where:
-        1.Where clause is used to filer data.
+----------------WHERE clause------------------
+1.WHERE:
+        1.WHERE clause is used to filer data.
         2.It is used to extract only those data that fulfill a specified condition.
-        3.The where clause is not only used in select statement, it is also used in update, delete, etc.
+        3.The WHERE clause is not only used in SELECT statement, it is also used in update, delete, etc.
         4.syntax:
-                select column1, column2
-                from table_name
-                where condition;
-        5.Example: select * from Customer where Country = 'Mexico'; (it will show all the data of colum that fulfill a condition, means those have city "mexico")
+                SELECT column1, column2
+                FROM table_name
+                WHERE condition;
+        5.Example: SELECT * FROM Customer WHERE Country = 'Mexico'; (it will show all the data of colum that fulfill a condition, means those have city "mexico")
         6.SQL require single quote around text values and numeric should not be enclosed in quotes:
-        7.Example: select * from Customer where customerID = 1;
-2.operators in the where clause:
+        7.Example: SELECT * FROM Customer WHERE customerID = 1;
+2.operators in the WHERE clause:
         --> =, >, <, >=, <=, <>(not equal to. In some versions of sql it wil be written as !=), BETWEEN(between a certain range),
         LIKE(search for pattern), IN(To specify multiple possible values for a column).
 
         
 ----------------AND, OR, and NOT operators------------------
-1.The where clause can be combined with AND, OR, and NOT operators.
-2.The And and OR is used to filter records beased on more than one condition.
+1.The WHERE clause can be combined with AND, OR, and NOT operators.
+2.The And and OR is used to filter records beased ON more than one condition.
         a.The AND operator displays a record if all the conditions separated by AND are true.
         b.The OR operator displays a record if any of the conditions separated by OR are true.
-3.The NOT operator displays a record if the condition is not true.
+3.The NOT operator displays a record if the conditiON is not true.
 4.Syntax:
         AND sysntax: 
-                --> select column1, column2 from table_name where condition1 AND condition2 AND condition3...;
+                --> SELECT column1, column2 FROM table_name WHERE condition1 AND condition2 AND condition3...;
         OR syntax:
-                --> select column1, column2 from table_name where condition1 OR condition2 OR condition3...;
+                --> SELECT column1, column2 FROM table_name WHERE condition1 OR condition2 OR condition3...;
         NOT syntax:
-                --> select column1, column2 from table_name where NOT condition;
+                --> SELECT column1, column2 FROM table_name WHERE NOT condition;
 5.Example:
         AND: 
-                --> select * from Customer where Country = "Germany" AND city = "Berlin";
+                --> SELECT * FROM Customer WHERE Country = "Germany" AND city = "Berlin";
         OR:
-                --> select * from Customer where city = "Berlin" AND city = "Mannheim";
+                --> SELECT * FROM Customer WHERE city = "Berlin" AND city = "Mannheim";
         NOT:
-                --> select * from Customer where NOT Country = "Germanmy";
+                --> SELECT * FROM Customer WHERE NOT Country = "Germanmy";
         Combining(AND,OR, and NOT):
-                --> select * from Customer where Country = "Germanmy" AND (City = "Berlin" OR City = "");
-                --> select * from Customer where NOT Country = "Germanmy" AND NOT Country = "USA";
+                --> SELECT * FROM Customer WHERE Country = "Germanmy" AND (City = "Berlin" OR City = "");
+                --> SELECT * FROM Customer WHERE NOT Country = "Germanmy" AND NOT Country = "USA";
 
 
-----------------Order By------------------
+----------------ORDER BY------------------
 1.The order keyword is used to sort the result-set in ascending or descending order.
-2.The order keyword sort the result in ascending order by default. If you want to sort in descending order, use the DESC keyword.
+2.The order keyword sort the result in ascending ORDER BY default. If you want to sort in descending order, use the DESC keyword.
 3.syntax:
-        --> select column1, column2 from table_name ORDER BY colum1, column2,... ASC | DESC
+        --> SELECT column1, column2 FROM table_name ORDER BY colum1, column2,... ASC | DESC
 4.Example:
-        --> select * from Customer ORDER BY Country;
-        --> select * from Customer ORDER BY Country DESC;
-        --> select * from Customer ORDER BY Country, CustomerName; (The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" and the "CustomerName" column. This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:
-        --> select * from Customer ORDER BY Country ASC, CustomerName DESC; 
+        --> SELECT * FROM Customer ORDER BY Country;
+        --> SELECT * FROM Customer ORDER BY Country DESC;
+        --> SELECT * FROM Customer ORDER BY Country, CustomerName; (The following SQL statement SELECTs all customers FROM the "Customers" table, sorted by the "Country" and the "CustomerName" column. This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:
+        --> SELECT * FROM Customer ORDER BY Country ASC, CustomerName DESC; 
 Example)
 
 
@@ -157,63 +157,63 @@ Example)
 
 ----------------Null values------------------
 1.A field with null value is a field with no value.
-2.A null value is different from zero or field that contains spaces. A field with null values is one that had been left blank during record creation
+2.A null value is different FROM zero or field that contains spaces. A field with null values is one that had been left blank during record creation
 3. We will have to use "IS NULL" and "IS NOT NULL" operator to test the values of null
 4.IS NULL:
         a.IS NULL operator is used to test for empty values
         b.syntax:
-                --> select column1, column2 from table_name where column IS NULL
+                --> SELECT column1, column2 FROM table_name WHERE column IS NULL
 5.IS NOT NULL:
         a.IS NOT NULL operator is used to test for non-empty values.    
         b.syntax:
-                --> select column1, column2 from table_name where column IS NOT NULL
+                --> SELECT column1, column2 FROM table_name WHERE column IS NOT NULL
 6.Example:
-        --> select * from data where age IS NOT NULL and email IS NOT NULL;
+        --> SELECT * FROM data WHERE age IS NOT NULL and email IS NOT NULL;
 
 
 ----------------Update statement------------------
 
 1.This statement is used to update the existing record in the table.
 2.syntax:
-        --> UPDATE table_name SET column1 = val, column2 = val where condition;
-        --> UPDATE data SET Age = 12, email = "xyz@gmail.com" where ID = 1;   //We can update multiple columns at the same time.
-3.Notice: The where clause in update statement. It specific which record should be updated. If you omit the where clause then it will update all records in the table.
+        --> UPDATE table_name SET column1 = val, column2 = val WHERE condition;
+        --> UPDATE data SET Age = 12, email = "xyz@gmail.com" WHERE ID = 1;   //We can update multiple columns at the same time.
+3.Notice: The WHERE clause in update statement. It specific which record should be updated. If you omit the WHERE clause then it will update all records in the table.
 4.Warning: 
         --> update table_name SET column = value;
-        --> In the above query, where clause is missing, it means that all the record will update of selected columm.
+        --> In the above query, WHERE clause is missing, it means that all the record will update of SELECTed columm.
 
 
 ----------------delete statement------------------
 1.This statement is used to delete the existing record in the table.
 2.sysntax: 
-        --> DELETE FROM table_name where condition.
-        --> DELETE from data where name = "Suraj";
-3.Notice: The where clause in delete statement. It specific which record should be delete. If you omit the where clause then it will delete all the records in the table.
-4.If you want to delete all rows then don't specify where clause:
-        --> DELETE from data;
+        --> DELETE FROM table_name WHERE condition.
+        --> DELETE FROM data WHERE name = "Suraj";
+3.Notice: The WHERE clause in delete statement. It specific which record should be delete. If you omit the WHERE clause then it will delete all the records in the table.
+4.If you want to delete all rows then don't specify WHERE clause:
+        --> DELETE FROM data;
 
 
 ----------------LIMIT clause------------------
 1.Limit clause is used to return the specific number of records.
-2.This clause is usefull on large tables with thousands of records. Returning a large number of records can impact performance.
+2.This clause is usefull ON large tables with thousands of records. Returning a large number of records can impact performance.
 3.syntax: 
-        --> select * from data Limit 4;
-4.If we want to return in between like from id number 4 to 10(inclusive) then use OFFSET
-        --> select * from data Limit 7 OFFSET 3;
-        --> also select * from data limit 7 OFFSET 3 where country = "germany";
-        --> select * from data where age = 29 limit 2;
+        --> SELECT * FROM data Limit 4;
+4.If we want to return in between like FROM id number 4 to 10(inclusive) then use OFFSET
+        --> SELECT * FROM data Limit 7 OFFSET 3;
+        --> also SELECT * FROM data limit 7 OFFSET 3 WHERE country = "germany";
+        --> SELECT * FROM data WHERE age = 29 limit 2;
         
 ----------------MIN() and MAX() function------------------
 1.MIN:
         a.syntax: 
-                --> select MIN(column1) from table_name where condition;
-        b.MIN function is used to return the smallest value of the selected column.
-        c. --> select MIN(price) as SmallestPrice from data(table_name)
+                --> SELECT MIN(column1) FROM table_name WHERE condition;
+        b.MIN functiON is used to return the smallest value of the SELECTed column.
+        c. --> SELECT MIN(price) as SmallestPrice FROM data(table_name)
 2.MAX:
         a.syntax: 
-                --> select MAX(column1) from table_name where condition;
-        b.MAX function is used to return the highest value of the selected column.
-        c. --> select MAX(price) as highestPrice from data(table_name)
+                --> SELECT MAX(column1) FROM table_name WHERE condition;
+        b.MAX functiON is used to return the highest value of the SELECTed column.
+        c. --> SELECT MAX(price) as highestPrice FROM data(table_name)
 
 3.AS:   AS keyword is used to rename the column and table name.
 
@@ -221,28 +221,28 @@ Example)
 
 ----------------COUNT, AVG, SUM functions------------------
 1.Count:
-        a.This function returns the number of rows that matches a specified condition.
+        a.This functiON returns the number of rows that matches a specified condition.
         b.Note: NUll values are not counted.
-        b.syntax:       --> select COUNT(*) from data where age = 25;
+        b.syntax:       --> SELECT COUNT(*) FROM data WHERE age = 25;
 2.AVG:
         a.It returns the average value of a numeric column
         b.Note: NUll values are not ignored.
-        c.syntax:       --> select AVG(column1) from data where condition;
+        c.syntax:       --> SELECT AVG(column1) FROM data WHERE condition;
 3.SUM:
         a.It returns the sum of a numeric column
         b.Note: NUll values are not ignored.
-        c.syntax:       --> select SUM(column) from data where condition;
+        c.syntax:       --> SELECT SUM(column) FROM data WHERE condition;
 
 
 ----------------Like operator------------------
-1.Like operator is used in a where clause to search for a specific pattern in column.
-2.There are two wildcards often used in conjunction with like operator:
+1.Like operator is used in a WHERE clause to search for a specific pattern in column.
+2.There are two wildcards often used in conjunctiON with like operator:
         1.The percent sign(%) represent zero, one, or multiple character.
         2.The underscore represents one, single character.
 3.These wildcards also used in combinations.
 4.We can also combine any number using AND or OR operator.
 5.syntax:
-        --> select column1 ,column2 from data where condition LIKE pattern;
+        --> SELECT column1 ,column2 FROM data WHERE conditiON LIKE pattern;
 6.     
          LIKE Operator	                             Description
 WHERE CustomerName LIKE 'a%'	        Finds any values that start with "a"
@@ -252,105 +252,351 @@ WHERE CustomerName LIKE '_r%'	        Finds any values that have "r" in the seco
 WHERE CustomerName LIKE 'a_%'	        Finds any values that start with "a" and are at least 2 characters in length
 WHERE CustomerName LIKE 'a__%'	        Finds any values that start with "a" and are at least 3 characters in length
 WHERE ContactName LIKE 'a%o'	        Finds any values that start with "a" and ends with "o"
-7. where ContactName NOT LIKE 'a%''
+7. WHERE ContactName NOT LIKE 'a%''
 
 
 ----------------wildcards------------------
 1.It is used to substitute one or more character in a string
-2.The wildcard characters are used with LIKE operator and LIKE operator is used with where clause to search for a specific pattern in a column.
-        --> select * from customer where city like 'der%'
-        --> select * from customer where city like '%der'
-        --> select * from customer where city like 'th_n_s'
+2.The wildcard characters are used with LIKE operator and LIKE operator is used with WHERE clause to search for a specific pattern in a column.
+        --> SELECT * FROM customer WHERE city like 'der%'
+        --> SELECT * FROM customer WHERE city like '%der'
+        --> SELECT * FROM customer WHERE city like 'th_n_s'
         
 
 ----------------IN------------------
-1.In operator is used to specify multiple values in a where clause.
+1.In operator is used to specify multiple values in a WHERE clause.
 2.In operator is shorthand for multiple "or" condition.
 3.syntax:
-        --> select * from table_name where age IN (45,12,48,89)
-        --> select * from table_name where country IN ("India", "Germany")
-        --> select * from table_name where age NOT IN (45,12,48,89)
+        --> SELECT * FROM table_name WHERE age IN (45,12,48,89)
+        --> SELECT * FROM table_name WHERE country IN ("India", "Germany")
+        --> SELECT * FROM table_name WHERE age NOT IN (45,12,48,89)
 
 
 ----------------between operator------------------
 1.Between operator is used to specify the value which is given in the range.
 2.In between operator, begin is inclusive and end is also included.
 3.syntax:
-        --> select * from table_name where price between 10 and 20
-        --> select * from table_name where price NOT Between 10 and 20
+        --> SELECT * FROM table_name WHERE price between 10 and 20
+        --> SELECT * FROM table_name WHERE price NOT Between 10 and 20
 4.Between with in operator:
-        --> select * from table_name where price between 10 and 20 AND ID NOT IN (1,2,3)
+        --> SELECT * FROM table_name WHERE price between 10 and 20 AND ID NOT IN (1,2,3)
 
 
 ----------------Aliases------------------
 1.Aliases is used to give a table name, or a column name in a table, a temporary name.
 2.Aliases are ofter used to give column name and make more readable.
-3.Aliases are only accessible for the duration of that query.
+3.Aliases are only accessible for the duratiON of that query.
 4.An alias is created with the 'AS' keyword
 5.syntax:
-        for column: --> select column as alias_name from table_name
-        for table: --> select column  from table_name as alias_name
-6.Concat_WS function is used to concate the multiple columns. We can use any punctuation to separate the record:
-        --> select coustomerName, concate_ws(',', Address, City, PostalCode, Country) AS "COntact Person" from Customer;
+        for column: --> SELECT column as alias_name FROM table_name
+        for table: --> SELECT column  FROM table_name as alias_name
+6.Concat_WS functiON is used to concate the multiple columns. We can use any punctuatiON to separate the record:
+        --> SELECT coustomerName, concate_ws(',', Address, City, PostalCode, Country) AS "COntact Person" FROM Customer;
         --> concate_ws stand for "Concate With Separator"
 
 ----------------Joins------------------
-1.Join clause is used to combine two or more tables, based on a related column between them
+1.Join clause is used to combine two or more tables, based ON a related column between them
 
 
 
-
-//SQL by Love Babar
-1.First we have to create databasae:
-        ---> CREATE DATABASE database_name;
-2.And then we have to tell the MySQL that we are using that database;
-        ---> USE database_name;
-
-
-
-//Data Types
-1.CHAR -1. string(0 - 255)
-        2. It takes the fized length, eg. if we want to add "RAM" in the data type CHAR then it will take full 0 - 254 bytes in the memory where the first three bytes it will take the "RAM" and rest of the bytes are empty but allocated to memory.
-        3. If you want to give the size of length fixed then use CHAR data type.
-2.VARCHAR-1. string(0 - 255)
-          2. It takes only as much bytes it requires, eg. "RAM" it will take only 3 bytes
-3.SIGNED and UNSIGNED:
-        CREATE TABLE student (
-                id INT PRIMARY KEY,
-                roll_no TINYTEXT(-127 to 128) UNSIGNED (it means that (0-255))
-        )
-4.Advanced DATA Types:
-        JSON(Javascript Object Notation)
-
-
-------------Create table----------
-1.syntax:
-        CREATE TABLE table_name(
+//MySQL
+1.Table:
+        1. CREATE TABLE table_name(
                 colum1 dataType,
-                colum2 dataType,
+                colum2 dataType
                 ...
-        )
-2.We use underscore or use camel case format to write the table name.
+        );
 
---------------Data Types----------
-1.Three types of 
+2.Data Types:
+        a. String:
+                1.CHAR(size) - 0 to 255 character we can store. size -> we can give fixed number of size then it will take characted only with fixed value.
+                2.VARCHAR(size) - 0 to 65535
+                3.BINARY(size) - It is same as CHAR. Only difference is, it stores binary(1 or 0)
+                4.VARBINARY(size) - It is same as VARCHAR. It stores binary
+                5.TINYTEXT - 255 characters - It will not take more than 255 characters
+                6.TEXT(size) - It will take up to 65535 bytes and we can also give size when we know exactly this much data i needed.
+                7.MEDIUMTEXT - 16777215 characters - This text is used to store long paragraphs
+                8.LONGTEXT - 4294967295 characters - This text is used to store long paragraphs
+                9.TINYBLOB - 255 bytes - BLOB means Binary Large Object 
+                10.BLOB(size) - 65535 bytes
+                11.MEDIUMBLOB - 16777215 bytes
+                12.LONGBLOB - 4294967295 bytes
+                13.ENUM(val1, val2, val3,..) list up to 65535 values - In ENUM, colum should take only that value which has been passed, any other value should not considered.
+                13.SET(val1, val2, val3,..) list up to 64 values - In set, column should take multiple value FROM the predefined values and can use any combinations and value is not significant.
+        b. Numeric:
+                1.BIT(size) - 0 to 64 bit
+                2.TINYINT(size) - (-128 to 127)
+                3.INT(size) - (-2147483648 to 2147483647 )
+                4.INTEGER(size) - It is same as INT(size) and INT is the short form of INTEGER
+                5.SMALLINT(size) - (-32768 to 32767)
+                6.MEDIUMINT(size) - (-8388608 to 8388607)
+                7.BIGINT(size) - (-9223372036854775808 to 9223372036854775807)
+                8.BOOL or BOOLEAN - 0 or 1 (true or false)
+                9.FLOAT(size, d) - size is total digit and and d is after decimal
+                10.DOUBLE(size, d) - size is total digit and d is after decimal  
+                11.DECIMAL(size, d) or DEC(size, d) - DOUBLE and DEC are same but DEC(size, d) can take fixed digit like size = 60, d = 30, not more than that and DOUBLE can take more thatn DEC
+        c. Date and Time dataType:
+                1.DATE - FROM '1001-01-01' to '9999-12-31' format of date should be like this (year-month-date)
+                2.DATETIME(fsp) - It is used to store both date and time in format like (year-month-date hh:mm:ss)
+                3.TIMESTAMP(fsp) - It is used to store past dates format:   (year-month-date hh:mm:ss)
+                4.TIME(fsp) - hh:mm:ss
+                5.YEAR - four-digit format: 1901
+
+3. Example:
+        create database student;
+        USE student;
+
+        CREATE TABLE product(
+	        p_id INT,
+                p_name VARCHAR(50),
+                p_company_name VARCHAR(50),
+                p_price INT
+        );
+        SELECT * FROM student.product;
+
+4. How to insert date in tables with SQL:
+        Query:
+                INSERT INTO table_name(colum1, colum2,...)
+                VALUES(value1, value2, ....)
+        NOTE: In VALUES, value is in same order as the order of column given
+        Example:
+                INSERT INTO presonal(id, name, birth_date, phone, gender)
+                VALUES(1, "Suraj", "2000-12-22", "8356820591", "M");
+        Example of Inserting Mulitple Values in a single column:
+                INSERT INTO presonal(id, name, birth_date, phone, gender)
+                VALUES  (2, "Vipin", "2001-05-13", "9897568432", "M"),
+                        (3,"Alia", "1991-12-04", "7842126578","F");
+5. List of constraints(restrictions or limitation) in MYSQL:
+        These constraints used at the time of creating tables
+        1.NOT NULL:
+                This constraints is used to specify that value should not be empty, it means that is should take value
+                Ex: id INT NOT NULL
+        2.UNIQUE:
+                If you want that in my column value should be unique then we use constraint UNIQUE
+                Ex: id INT UNIQUE NOTNULL
+        3.DEFAULT:
+                Ex: city VARCHAR(30) NOT NULL DEFAULT'AGRA'
+        4.CHECK:
+                Ex: age INT NOT NULL CHECK(age>=18)
+        5.FOREIGN KEY
+                1. FOREIGN kEY is used to link two table together
+                2. FOREIGN KEY in one table used to point PRIMARY KEY in another table
+                Example: CREATE TABLE table_name (
+                        id int not null auto_increment,
+                        name VARCHAR(50) not null
+                        city VARCHAR(30) not null
+                        primary key(id)
+                        foreign key(city) reference City(cid)
+                )
+        6.PRIMARY KEY:
+                1. Primary key always has unique data
+                2. Primary key cannot have null value
+                3. A table can contain only one primary key constaints
+                Example: CREATE TABLE table_name (
+                        id int not null auto_increment,
+                        name VARCHAR(50) not null
+                        primary key(id)
+                )
+        7.INDEX
+        8.AUTO INCREMENT
+        9.ALTER:
+                Use ALTER when you have to modify the table
+                Example : ALTER TABLE table_name
+                          ADD PRIMARY KEY(id)
+
+        Example:
+                CREATE TABLE personal(
+	                id INT NOT NULL UNIQUE,
+                        name VARCHAR(50) NOT NULL,      
+                        age INT NOT NULL CHECK(age>=18),
+                        gender VARCHAR(1) NOT NULL
+                );
+
+6. SELECT: It is used to SELECT the data FROM a column in various ways using clauses
+        Query: 
+                For a specific column: SELECT colum1, colum2,.. FROM table_name
+                For all column: SELECT * FROM table_name
+        Example: SELECT * FROM presonal
+                 SELECT id, name, gender FROM presonal
+
+7. AS(alias) : It is used when you want to rename the column name at the time of showing the column
+                Example: SELECT id AS "Student ID", name AS "Student Name", gender as Gender
+8. SELECT with WHERE Clause: It is used when we have to see data accorind to condition
+        Query: SELECT colum1, colum2,.. FROM table_name WHERE condition
+                
+        Example : SELECT * FROM personal WHERE gender='F';
+                  SELECT * FROM personal WHERE age=18;
+9. WHERE comparisON operator:
+        =, >, <, <=, >=, <> or !=, BETWEEN, LIKE, IN
+10 AND OR NOT operator:
+        It is used to put multiple conditions in WHERE clause
+        Example: SELECT * FROM student WHERE (age <=30 or age >=24) and city="mumbai";
+                 SELECT * FROM student WHERE age NOT IN (20,21,24,25);
+                 SELECT * FROM student WHERE city NOT IN ("Mumbai", "Delhi");
+11. IN operator:
+        It is used to SELECT those values which are available in that column
+        Example: SELECT * FROM student WHERE age IN (20,21,24,25);
+        It is same as OR operator but when we have to put multiple or operator then our query will become lengthy, so instead of using OR operator for multiple conditON for a specific column, we can use IN operator
+12. BETWEEN operator:
+        It is used when you have to find in range
+        Example: SELECT * FROM student WHERE age Between 18 and 22;
+                 SELECT * FROM student WHERE id not Between 4 and 5;
+                 SELECT * FROM student WHERE name not Between "a" and "k";
+
+13. Like operator
+        1.Like operator is used in a WHERE clause to search for a specific pattern in column.
+        2.There are two wildcards often used in conjunctiON with like operator:
+                1.The percent sign(%) represent zero, one, or multiple character.
+                2.The underscore represents one, single character.
+        3.These wildcards also used in combinations.
+        4.We can also combine any number using AND or OR operator.
+        5.syntax:
+                --> SELECT column1 ,column2 FROM data WHERE column LIKE pattern;
+        6.     
+         LIKE Operator	                             Description
+        WHERE CustomerName LIKE 'a%'	        Finds any values that start with "a"
+        WHERE CustomerName LIKE '%a'	        Finds any values that end with "a"
+        WHERE CustomerName LIKE '%or%'	        Finds any values that have "or" in any position
+        WHERE CustomerName LIKE '_r%'	        Finds any values that have "r" in the second position
+        WHERE CustomerName LIKE 'a_%'	        Finds any values that start with "a" and are at least 2 characters in length
+        WHERE CustomerName LIKE 'a__%'	        Finds any values that start with "a" and are at least 3 characters in length
+        WHERE ContactName LIKE 'a%o'	        Finds any values that start with "a" and ends with "o"
+        7. WHERE ContactName NOT LIKE 'a%''
 
 
+14.wildcards
+1.It is used to substitute one or more character in a string
+2.The wildcard characters are used with LIKE operator and LIKE operator is used with WHERE clause to search for a specific pattern in a column.
+        --> SELECT * FROM customer WHERE city like 'der%'
+        --> SELECT * FROM customer WHERE city like '%der'
+        --> SELECT * FROM customer WHERE city like 'th_n_s'
+
+15. BINARY:
+        SELECT * FROM student WHERE binary name like "S%"; // for case sensitive
+
+16. Regular ExpressiON in SQL:
+        It is used to find something FROM the table
+        Sign: 
+            '^': beginning of string - ^ra
+            '$': end of string - an$
+            '[...]': any character listed between the square bracket
+            '^[...]': begin with any character listed between the square bracket
+            '[a-z]': Match with the range - '[a-h]e'
+            p1|p2|p3 : 'tom | dick | harry'
+        Example : SELECT * FROM student WHERE name regexp 'raj';
+                  SELECT * FROM student WHERE name regexp '^su';
+                  SELECT * FROM student WHERE name regexp 'in$';
+                  SELECT * FROM student WHERE name regexp 'suraj|vipin|shiv';
+                  SELECT * FROM student WHERE name regexp 'aj$|^vi|iv';
+                  SELECT * FROM student WHERE name regexp '[vsh]i';
+                  SELECT * FROM student WHERE name regexp '[vsh]';
+                  SELECT * FROM student WHERE name regexp '^[vsh]';
+                  SELECT * FROM student WHERE name regexp '[vsh]%';
+17. ORDER BY and DISTINCT:
+        ASC is the default value of ORDER BY
+        Example : SELECT * FROM student ORDER BY name desc
+                  SELECT * FROM student ORDER BY name
+                  SELECT * FROM student ORDER BY name, age, gender
+
+18. DISTINCT:
+        It is used to show different values. 
+        Example:
+                SELECT distinct age FROM student;
+                SELECT distinct city FROM student;
+19. IS NULL and IS NOT NULL:
+        IS NULL: It is used to show data that have value null
+                Example :SELECT * FROM product WHERE p_name is null;
+        IS NOT NULL: It is used to show data that do not have value null
+                Example :SELECT * FROM product WHERE p_name is not null;
+20. LIMIT and OFFSET:
+        1.Limit clause is used to return the specific number of records.
+        2.This clause is usefull ON large tables with thousands of records. Returning a large number of records can impact performance.
+        3.syntax: 
+                --> SELECT * FROM data Limit 4;
+        4.If we want to return in between like FROM id number 4 to 10(inclusive) then use OFFSET
+        --> SELECT * FROM data Limit 7 OFFSET 3;
+        --> also SELECT * FROM data limit 7 OFFSET 3 WHERE country = "germany";
+        --> SELECT * FROM data WHERE age = 29 limit 2;
+        --> SELECT * FROM student limit 3,3;
+21. MIN() and MAX() aggregate function
+        1.MIN:
+                a.syntax: 
+                        --> SELECT MIN(column1) FROM table_name WHERE condition;
+                b.MIN functiON is used to return the smallest value of the SELECTed column.
+                c. --> SELECT MIN(price) as SmallestPrice FROM data(table_name)
+        2.MAX:
+                a.syntax: 
+                        --> SELECT MAX(column1) FROM table_name WHERE condition;
+                b.MAX functiON is used to return the highest value of the SELECTed column.
+                c. --> SELECT MAX(price) as highestPrice FROM data(table_name)
+
+22. COUNT, AVG, SUM aggregate functions
+        1.Count:
+                a.This functiON returns the number of rows that matches a specified condition.
+                b.Note: NUll values are not counted.
+                b.syntax:       --> SELECT COUNT(*) FROM data WHERE age = 25;
+        2.AVG:
+                a.It returns the average value of a numeric column
+                b.Note: NUll values are not ignored.
+                c.syntax:       --> SELECT AVG(column1) FROM data WHERE condition;
+        3.SUM:
+                a.It returns the sum of a numeric column
+                b.Note: NUll values are not ignored.
+                c.syntax:       --> SELECT SUM(column) FROM data WHERE condition;
 
 
+23. COMMIT and ROLLBACK:
+        COMMIT : It is used to save the query, when you run commit then rollback will not work bring changes before commit.
+        ROLLBACK: It is used to getback to that versiON of query, means that if you by mistaken run some query but now you want to get back then we have to use ROLLBACK;
+        Note: ROLLBACK is work only ON insert, update, delete
 
-
-Question for interview:
+24. DELETE:
+        Example: DELETE FROM student WHERE id = 1;
+        Note: always use WHERE clause with delete statement
+QuestiON for interview:
         1.What is SQL?
         2.How to use SQL?
-        3.What is select statemet?
-        4.What is where clause?
+        3.What is SELECT statemet?
+        4.What is WHERE clause?
 
+25. Join:
+        1.INNER JOIN:
+                a.Query: SELECT columns FROM table1 INNER JOIN tabel2 ON tabel1.colum_name = tabel2.colum_name
+                b.Example :
+                       1. SELECT * FROM student INNER JOIN city
+                        ON student.city = city.cityId
+                       2.SELECT * FROM student as s INNER JOIN city as c
+                        ON s.city = c.cityId
+                       3.SELECT s.id as ID, s.name as Name, s.gender as Gneder, s.age as Age, c.cityName as City, s.phone as Phone FROM student as s INNER JOIN city as c
+                        ON s.city = c.cityId
+        2.LEFT JOIN:
+                a. LEFT JOIN method return all the records FROM left tabel(table1) and only matched record FROM the right table(table2)
+                b. If nothing is match then no record will be come FROM right table(table2)
+                c.Query: SELECT columns FROM table1 LEFT JOIN tabel2 ON tabel1.colum_name = tabel2.colum_name
+                d.Example: SELECT * FROM student LEFT JOIN city 
+                        ON student.city = city.cityId;
+        3.RIGHT JOIN:
+                a. RIGHT JOIN method return all the records FROM right tabel(table1) and only matched record FROM the left table(table2)
+                b. If nothing is match then no record will be come FROM left table(table2)
+                c.Query: SELECT columns FROM table1 RIGHT JOIN tabel2 ON tabel1.colum_name = tabel2.colum_name
+                d.Example: SELECT * FROM student RIGHT JOIN city 
+                        ON student.city = city.cityId;
+        4.Cross Join:
+                a. It does not need foreign and primary key to link to another table, it return all the possible records
+                b. SELECT * FROM student cross join city WHERE gender = "M" ORDER BY name;
+                c. It creates combinations of two tables
+                d. SELECT * FROM student, city WHERE gender = "M" ORDER BY name;  //this query is same as cross join
+26. Join Mulitple Tables:
+        SELECT s.id, s.name, s.gender, s.age, c.cityName, s.phone, cr.courseName 
+        FROM student s INNER JOIN city c
+        ON s.city = c.cityId 
+        INNER JOIN courses cr ON s.courses = cr.courseId 
+        ORDER BY id;
 
 Some of the most important SQL command:
-        1.select: Extract data from a database.
+        1.SELECT: Extract data FROM a database.
         2.update: updates data in a database.
-        3.delete: deletes data from a database.
+        3.delete: deletes data FROM a database.
         4.insert into: inserts new data into a database.
         5.create database: creates a new database.
         6.alter databse: modifies a database.
@@ -362,8 +608,8 @@ Some of the most important SQL command:
 
 
 Note:
-        1.SQL is not case-sensitive, select is the same as SELECT.
-        2.Semicolon after statemnt, it separate each sql statement in database system that allows us to execute more than one sql statement in the same call to the server.
+        1.SQL is not case-sensitive, SELECT is the same as SELECT.
+        2.SemicolON after statemnt, it separate each sql statement in database system that allows us to execute more than one sql statement in the same call to the server.
 
 
 
