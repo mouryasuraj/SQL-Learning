@@ -23,15 +23,15 @@ What is RDBMS(Relational Database Management System):
                 iii.This ensures data integrity and consistency.
             c.Constraints:
                 i.RDBMS supports to used constraints to define rule for the data of tables.
-                ii.Some of the commON constraints like "Primary", "foreign", "check", "unique".
+                ii.Some of the common constraints like "Primary", "foreign", "check", "unique".
             d.ACID properties:
                 i.RDBMS adheres to ACID properties.
                 ii.ACID stands for Automicity, Consistency, Isolation, Durability
                 iii.Explore ACID:
-                        a.Automicity:Ensures that a transactiON is treated as a single, indivisible unit of work,
+                        a.Automicity:Ensures that a transaction is treated as a single, indivisible unit of work,
                         b.Consistency: Gurantees that database is in a consistent state before or after the transaction.
-                        c.Isolation: Ensures that transactiON is executed in isolatiON FROM each other.
-                        d.Durablility:Gurantees that once a transactiON is committed, its affects permanent
+                        c.Isolation: Ensures that transaction is executed in isolation FROM each other.
+                        d.Durablility:Gurantees that once a transaction is committed, its affects permanent
            e.SQL(Structured Query Language):
                 1.RDBMS uses SQL for defininig and manipulating data.
                 ii.SQL provide standardized way to interact with database, allowing users to perform updating, querying and managing the database schema. 
@@ -72,14 +72,14 @@ To show data ON your website you will need:
         4.If we want to SELECT all column FROM the table then use this syntax:
                 --> SELECT * FROM Customer;
         5.Example: SELECT CustomerName, City, Country FROM Customers;
-2.SELECT distinct:
+2.SELECT DISTINCT Statement:
         1.SELECT distinct is used to return only distinct(different) values.
         2.Inside a table, a column containes duplicate values and sometimes you only want to list the different (distinct) values
         3.syntax:
                 --> SELECT distinct column1 column2
                     FROM table_name;
         4.Example: --> SELECT distinct Country FROM Customer; (Name of the country can be same).
-3.count: 
+3.COUNT: 
         1.It counts and return the number of values.
         2.Example: --> SELECT count(distinct Country) FROM Customer;   (It counts and return the number of different values)
                         output: 21
@@ -98,13 +98,15 @@ To show data ON your website you will need:
         6.SQL require single quote around text values and numeric should not be enclosed in quotes:
         7.Example: SELECT * FROM Customer WHERE customerID = 1;
 2.operators in the WHERE clause:
-        --> =, >, <, >=, <=, <>(not equal to. In some versions of sql it wil be written as !=), BETWEEN(between a certain range),
-        LIKE(search for pattern), IN(To specify multiple possible values for a column).
+        --> =, >, <, >=, <=, <> or !=(not equal to. In some versions of sql it wil be written as !=), 
+        BETWEEN(between a certain range),
+        LIKE(search for pattern), 
+        IN(To specify multiple possible values for a column).
 
         
 ----------------AND, OR, and NOT operators------------------
 1.The WHERE clause can be combined with AND, OR, and NOT operators.
-2.The And and OR is used to filter records beased ON more than one condition.
+2.The And and OR is used to filter records beased on more than one condition.
         a.The AND operator displays a record if all the conditions separated by AND are true.
         b.The OR operator displays a record if any of the conditions separated by OR are true.
 3.The NOT operator displays a record if the conditiON is not true.
@@ -592,6 +594,192 @@ QuestiON for interview:
         ON s.city = c.cityId 
         INNER JOIN courses cr ON s.courses = cr.courseId 
         ORDER BY id;
+
+27. GROUP BY and HAVING Clause:
+        GROUP BY:
+                1. A GROUP BY clause is used in conjunction with SELECT statement and aggregiate function to group rows together by common column values.
+                2.Query: SELECT colum from table_name where conditiON GROUP BY columns
+                3.      SELECT c.cityName, count(s.city) as Total 
+                        from student s inner join city c
+                        on s.city = c.cityId
+                        where s.age >= 24
+                        group by city;
+        HAVING: It is used with GROUP BY to filter the data
+                Example: SELECT cr.courseName, count(s.courses) as total
+                         from student s inner join courses cr
+                         on s.courses = cr.courseId
+                         group by courses
+                         having total >= 4;
+
+28. SubQuery or Nested Query:
+        Query:  SELECT name from  student
+                where courses = (select courseId from courses where courseName = 'Btech');
+        For more than one data 
+                SELECT name from  student
+                where courses in (select courseId from courses where courseName In ( 'Btech', 'Mtech'));
+        EXISTS Clause: If any single record in Exist then only our parent table will show result else it will not show any result
+                        SELECT name from  student
+                        where EXISTS(select courseId from courses where courseName = 'Btech') 
+        NOT EXISTS Clause : If any rocord in not exist then parent table will show the result else it will not show any result
+                        SELECT name from  student
+                        where NOT EXISTS(select courseId from courses where courseName = 'Btech') 
+
+29. UNION and UNION ALL Operator:
+        1. Both are used to show all the records from the selected table but there is a small difference , in UNION it will remove the duplicate value, and in UNION ALL it will show all the record
+        Example:
+        Rule to write union: 
+                1.Each SELECT statement within UNION must have the same number of column
+                2.The columns must have same data types
+                3.The columns in each SELECT statement must also be in the same order.
+                 Example:       SELECT s.name, c.cityName 
+                                from student s inner join city c
+                                on s.city = c.cityId
+                                where c.cityName = "Mumbai"
+                                union all
+                                select l.name, ci.cityName 
+                                from lecturers l inner join city ci
+                                on l.city = ci.cityId
+                                where ci.cityName = "Coimbatore";
+30. IF and CASE clause:
+        IF: 
+        Example: 
+                        SELECT id, name, age,
+                        if(age >= 23 ,"More than 23", "Under 23") as Reuslt
+                        from student;
+        CASE:
+                SELECT id, name, age,
+                CASE 
+                when age >=23 and age <=25 then "less than 25 and more than 23"
+                when age >=20 and age <23 then "less than 23 and more than 20"
+                else "Age is not correct"
+                END as Grade
+                from student;
+
+31. Arithmetic function:
+        ABS(): returns positive value
+        FLOOR(),
+        CEIL(),
+        ROUND() ,
+        SQRT(),
+        POW(base, exp),
+        SIGN(number) : (no > 0) --> 1, (no = 0) --> 0, (no < 0) --> -1
+        RAND(): Random Number between 0 to 1
+
+        Example :
+                SELECT 5+6 as Total;
+
+32 String function:
+        UPPER(): select id, UPPER(name) as Name
+        UCASE(): same as UPPER
+        LOWER(): LCASE() same as LOWER
+        CHARACTER_LENGTH(name),
+        CHAR_LENGTH: same as CHARACTER_LENGTH
+        LENGTH(): Return in bytes
+        CONCAT(name, percenteage, age)
+        CONCAT_WS(): It take first parameter is for separation
+        LTRIM("    Suraj"): remove space from left
+        RTRIM("Suraj          "): remove space from right
+        TRIM("      Suraj    "): remove space from both the side
+        POSITION("Baba" IN "Yahoo Baba") --> return postion 7
+        INSTR("Suraj Mourya", "a") --> return position 4
+        LOCATE("a", "Suraj Mourya", 5)
+        SUBSTRING("Suraj Mourya", 3,7) --> return 'raj Mou'
+        SUBSTR() : same as SUBSTRING
+        MID(): same as SUBSTRING and SUBSTR
+        SUBSTRING_INDEX('www.youtube.com', ".",1) --> www
+        SUBSTRING_INDEX('www.youtube.com', ".",2) --> www.youtube
+        SUBSTRING_INDEX('www.youtube.com', "o",1) --> www.y 
+        LEFT("Suraj Mourya",4) --> Sur
+        RIGHT("Suraj Mourya",4) --> rya
+        RPAD("Suraj Mourya", 20,"-") --> Suraj Mourya--------
+        LPAD("Suraj Mourya", 20,"*") --> ********Suraj Mourya
+        SPACE(100) --> add 100 spaces
+        REVERSE("Suraj") --> "jaruS"
+        REPLACE("Suraj Mourya", "Mourya", "Maurya") --> return Suraj Maurya
+        STRCMP("Suraj Mourya", "Suraj Mourya") ---> 0
+        STRCMP("Suraj Mourya", "Suraj") ---> 1
+        STRCMP("Suraj", "Suraj Mourya") ---> -1
+        FIELD(5, 0,1,2,3,4,5) --> return 6
+        FIELD("ram", "Ram", "Mohan", "Shyam") --> return 1
+        FIND_IN_SET("ram", "Mohan,Ram,Shyam") --> return 2
+        FORMAT(255.3568, 2) --> 255.36
+        FORMAT(255.3568, 3) --> 255.357
+        HEX("Suraj") --> 537572616A
+
+Date function:
+        CURRENT_DATE(): 2024-03-04
+        CURDATE(): same as CURRENT_DATE
+        SYSDATE(): return date of system
+        NOW(): reutrn date and time of server --> '2024-03-04 15:09:51'
+        DATE("2024-01-15 09:34:21") ==> return the date --> 2024-01-15
+        MONTH("2024-01-15 09:34:21") ==> return the date --> 01
+        MONTHNAME("2024-01-15 09:34:21") ==> return the date --> January
+        YEAR("2024-01-15 09:34:21") ==> return the date --> 2024
+        QUARTER("2024-01-15 09:34:21") --> 1
+        DAY("2024-01-15 09:34:21") --> 15
+        DAYOFMONTH("2024-01-15 09:34:21) --> 15
+        DAYNAME("2024-01-15 09:34:21") --> MONDAY
+        DAYOFWEEK("2024-01-15 09:34:21") --> 2
+        DAYOFYEAR("2024-01-15 09:34:21") --> 15
+        WEEK("2024-01-15 09:34:21") --> 2
+        WEEKDAY("2024-01-15 09:34:21") --> 2
+        YEARWEEK("2024-01-15 09:34:21") --> 202402
+        LAST_DAY("2024-01-15 09:34:21") --> '2024-01-31'
+        EXTRACT(MONTH FROM "2024-01-15 09:34:21") --> 1
+        
+Time Function:
+        CURRENT_TIME() --> return time of server --> 15:32:00
+        CURTIME()
+        CURRENT_TIMESTAMP() --> return time with date
+        LOCALTIME() --> reutrn current time with date
+        LOCALTIMESTAMP --> return current date and time
+        TIME("2024-01-15 13:45:15") --> reutrn time
+        HOUR("2024-01-15 13:45:15") --> reutrn hour
+        MINUTE("2024-01-15 13:45:15") --> reutrn minute
+        SECOND("2024-01-15 13:45:15") --> reutrn second
+        TIMEDIFF("2024-01-15 13:45:15","2024-01-15 8:45:15")
+        ADDTIME("2024-01-15 13:45:15", "5")
+        SUBTIME("2024-01-15 13:45:15", "5")
+        MAKETIME(16,15,20) --> 16:15:20
+        TIMEFORMAT("2024-01-15 13:45:15")
+        
+
+34. ALter :
+        Add column in a table:
+        changing data type of a column
+        change column name
+        adding constaints
+        changing coloumn position
+        deleted column
+        renaming tables
+         Query: 
+                Add:    ALTER TABLE table_name
+                        ADD colum_name datatype;
+                modify: ALTER TABLE table_name
+                        MODIFY colum_name datatype;
+                delete : ALTER TABLE table_name
+                        DROP COLUMN colum_name;
+                rename : ALTER TABLE table_name
+                        CHANGE colum_name new_name;
+                rename table : ALTER TABLE table_name
+                        rename new_name_table;
+                
+35. DROP and TRUNCATE:
+        DEleted table
+        DROP cmd will remove the table
+        TRUNCATE cmd will remove the data which is inside the table
+
+
+37. VIEW:
+        CREATE VIEW viewName as 
+                select * 
+                from student inner join city 
+                on student.city = city.cityid
+        DROP VIEW viewName
+        ALter view as edit//////
+
+38. INDEX:
+        It is used to search fast
 
 Some of the most important SQL command:
         1.SELECT: Extract data FROM a database.
